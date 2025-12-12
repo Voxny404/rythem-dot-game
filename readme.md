@@ -15,6 +15,12 @@ A **browser-based rhythm game** with **real-time audio analysis** and **multipla
 
 ---
 
+## Live Demo
+
+Play the game online: [https://voxny404.github.io/rythem-dot-game/](https://voxny404.github.io/rythem-dot-game/)
+
+---
+
 ## How to Play
 
 1. Open \`index.html\` in a modern browser (Chrome or Firefox recommended).  
@@ -53,9 +59,9 @@ A **browser-based rhythm game** with **real-time audio analysis** and **multipla
 
 1. Clone the repository:  
 
-\`\`\`bash
-git clone https://github.com/yourusername/rhythm-dot-game.git
-\`\`\`
+```bash
+git clone https://github.com/Voxny404/rythem-dot-game.git
+```
 
 2. Open \`index.html\` in your browser.  
 3. Make sure your browser allows audio playback (some browsers block autoplay).  
