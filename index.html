@@ -1,0 +1,114 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rhythm Dot Game</title>
+</head>
+<style>
+    #container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    body {
+        background-color: black;
+    }
+
+/* Full-screen semi-transparent background */
+#metaWindow {
+    display: none; /* hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Centered content box */
+#metaContent {
+    background-color: #111;
+    color: white;
+    padding: 30px 50px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 0 20px black;
+    max-width: 500px;
+}
+
+/* Close button */
+#closeBtn {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 30px;
+    cursor: pointer;
+} 
+textarea {
+    width: 100%;
+    height: 120px;
+    padding: 10px;
+    resize: vertical;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: monospace;
+    font-size: 14px;
+}
+
+.message-row {
+    display: flex;
+    gap: 10px;
+}
+
+
+button#sendBtn {
+    padding: 10px 20px;
+    border: none;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 14px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+button#sendBtn:hover {
+    background-color: #45a049;
+}
+</style>
+<body>
+    
+    <!-- File input -->
+    <input style="display:none" type="file" id="fileInput" accept=".mp3">
+    <audio style="display:none" id="audioPlayer" controls></audio>
+    <br>
+    <br>
+    <div id="container"> 
+        <canvas id="canvas" width="1100" height="700" style="background: black;"></canvas>
+    </div>
+    <!-- Meta Window -->
+    <div id="metaWindow">
+        <div id="metaContent">
+            <span id="closeBtn">&times;</span>
+            <h3>Peer to Peer</h3>
+
+            <textarea id="local" placeholder="Local SDP"></textarea>
+            <textarea id="remote" placeholder="Paste remote SDP here"></textarea>
+            <br>
+            <br>
+            <button id="sendBtn">Send</button>        
+        </div>
+    </div>
+    <!-- Scripts -->
+    <script src="src/network.js"></script>
+    <script src="src/menu.js"></script>
+    <script src="src/index.js"></script>
+    <script src="src/hotkeys.js"></script>
+    <script src="src/game.js"></script>
+</body>
+</html>
